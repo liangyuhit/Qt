@@ -77,19 +77,20 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.table_writeline(len(self.items)-1)
         
     def delete_item(self):
-        self.items.pop()
-        self.factors.pop()
-        self.amounts.pop()
-        self.tableWidget.removeRow(len(self.items)-1)   
+        if len(self.items) > 0: 
+            self.items.pop()
+            self.factors.pop()
+            self.amounts.pop()
+        if self.tableWidget.rowCount() > 0:
+            self.tableWidget.removeRow(self.tableWidget.rowCount()-1)   
         self.calculate()
         
     def clear_item(self):
-        self.items.clear()
-        self.amounts.clear()
-        self.factors.clear()
-#         self.tableWidget.clearContents()
-        row = self.tableWidget.rowCount()
-        for self.row in row:
+        if len(self.items) > 0: 
+            self.items.clear()
+            self.amounts.clear()
+            self.factors.clear()
+        for self.row in range(self.tableWidget.rowCount()):
             self.tableWidget.removeRow(0)
         self.calculate()
         
