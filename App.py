@@ -87,7 +87,10 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.items.clear()
         self.amounts.clear()
         self.factors.clear()
-        self.tableWidget.clearContents()
+#         self.tableWidget.clearContents()
+        row = self.tableWidget.rowCount()
+        for self.row in row:
+            self.tableWidget.removeRow(0)
         self.calculate()
         
 if __name__ == '__main__':
