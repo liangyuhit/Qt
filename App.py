@@ -11,7 +11,7 @@ from demo import Ui_MainWindow
 from PyQt5.QtWidgets import QTableWidgetItem
 from PyQt5.Qt import pyqtSlot
 
-items = ["水果", "主食", "蔬菜", '肉','豆制品','奶']
+items = ["Fruit", "Bread", "Vegetable", 'Meat','Soya','Milk']
 factors = [1,2,0.5,2,0.5,1]
 
 class MyWindow(QMainWindow, Ui_MainWindow):
